@@ -51,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout.LayoutParams parametros = new LinearLayout.LayoutParams(600, 400);
         imagen1.setLayoutParams(parametros);
         parametros.gravity=Gravity.CENTER;
+
+        //Agregar texto a un TextView ya existente
+        texto2.append("\nProgramacion de dispositivos moviles");
     }
 
     public void agregarTexto(LinearLayout ly, String text){
