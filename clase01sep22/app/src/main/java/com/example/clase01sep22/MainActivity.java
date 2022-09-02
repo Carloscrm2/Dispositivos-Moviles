@@ -3,6 +3,7 @@ package com.example.clase01sep22;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -36,6 +37,20 @@ public class MainActivity extends AppCompatActivity {
         agregarTexto(linearLayout, "Nuevo texto desde una funcion");
         agregarTexto(linearLayout, "Segundo texto agregado");
         agregarTexto(linearLayout, "Tercer texto agregado", 40);
+
+        //Agregar una imagen
+        ImageView imagen1 = new ImageView(this);
+        imagen1.setImageResource(R.drawable.upiita);
+        linearLayout.addView(imagen1);
+        imagen1.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        // Obtener ancho y alto de imagen
+        int ancho = imagen1.getDrawable().getIntrinsicWidth();
+        int alto = imagen1.getDrawable().getIntrinsicHeight();
+
+        //Controlar dimensiones de una imagen
+        LinearLayout.LayoutParams parametros = new LinearLayout.LayoutParams(600, 400);
+        imagen1.setLayoutParams(parametros);
+        parametros.gravity=Gravity.CENTER;
     }
 
     public void agregarTexto(LinearLayout ly, String text){
