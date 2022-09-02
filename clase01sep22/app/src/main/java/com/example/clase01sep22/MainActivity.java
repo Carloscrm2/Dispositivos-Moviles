@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Agregar texto a un TextView ya existente
         texto2.append("\nProgramacion de dispositivos moviles");
+
+
     }
 
     public void agregarTexto(LinearLayout ly, String text){
