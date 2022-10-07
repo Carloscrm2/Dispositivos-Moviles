@@ -59,10 +59,21 @@
         android:textColor="#000000"
         android:layout_margin="10dp"/>
 
+    <CheckBox
+        android:id="@+id/cbox1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Borrar datos"/>
+
     <Button
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingresar"
-        android:layout_margin="150dp"/>
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="150dp"
+        />
+
+
+
 </LinearLayout>
