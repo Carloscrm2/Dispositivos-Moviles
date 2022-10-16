@@ -14,6 +14,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     TableLayout tl;
     TextView pantalla;
+
+    String aux;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +70,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn22.setOnClickListener(this); // -
         btn18.setOnClickListener(this); // *
         btn14.setOnClickListener(this); // ÷
+        btn13.setOnClickListener(this); // SQRT(X)
+        btn12.setOnClickListener(this); // ^2
+        btn11.setOnClickListener(this); // 1/X
+        btn8.setOnClickListener(this); // CE
+        btn9.setOnClickListener(this); // C
+        btn10.setOnClickListener(this); // DEL
         btn30.setOnClickListener(this); // =
 
     }
@@ -118,8 +126,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn14:
                 agregarTexto("÷");
                 break;
+            case R.id.btn13:
+                raiz(); // raiz
+                break;
             case R.id.btn30:
                 resultado();
+                break;
+            case R.id.btn12:
+                cuadrado();
+                break;
+            case R.id.btn10:
+                aux = pantalla.getText().toString();
+                del(aux);
+                break;
+            case R.id.btn11:
+                reciproco();
+                break;
+            case R.id.btn8:
+                limpiar();
+                break;
+            case R.id.btn9:
+                limpiar();
                 break;
         }
     }
@@ -248,5 +275,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }finally {
             pantalla.setText(aux);
         }
+    }
+
+    public void raiz(){
+        String aux = pantalla.getText().toString();
+        float resu = (float)Math.sqrt(Float.parseFloat(aux));
+        aux = "√(" + aux + ")" + "=" + resu;
+        pantalla.setText(aux);
+    }
+
+    public void cuadrado(){
+        String aux = pantalla.getText().toString();
+        float resu = (float)Math.pow(Float.parseFloat(aux), 2);
+        aux = aux + "^2" + "=" + resu;
+        pantalla.setText(aux);
+    }
+
+    public void reciproco(){
+        String aux = pantalla.getText().toString();
+        float resu = (float)Math.pow(Float.parseFloat(aux), -1);
+        aux = "1/" + aux + "=" + resu;
+        pantalla.setText(aux);
+    }
+
+    public void del(String aux){
+        String naux="";
+        for (int i = 0; i < aux.length()-1; i++)
+            naux = naux + aux.charAt(i);
+        pantalla.setText(naux);
+    }
+    public void limpiar(){
+        pantalla.setText("");
     }
 }
