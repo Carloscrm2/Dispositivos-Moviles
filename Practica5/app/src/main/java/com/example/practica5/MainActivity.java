@@ -2,7 +2,9 @@ package com.example.practica5;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btn11 = (Button) findViewById(R.id.btn11); //1/X
         Button btn12 = (Button) findViewById(R.id.btn12); //X^2
         Button btn13 = (Button) findViewById(R.id.btn13); //SQRT(X)
-        Button btn14 = (Button) findViewById(R.id.btn14); // /
+        Button btn14 = (Button) findViewById(R.id.btn14); // / ÷
         Button btn15 = (Button) findViewById(R.id.btn15); // 7
         Button btn16 = (Button) findViewById(R.id.btn16); // 8
         Button btn17 = (Button) findViewById(R.id.btn17); // 9
@@ -63,6 +65,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn28.setOnClickListener(this); // 0
 
         btn26.setOnClickListener(this); // +
+        btn22.setOnClickListener(this); // -
+        btn18.setOnClickListener(this); // *
+        btn14.setOnClickListener(this); // ÷
+        btn30.setOnClickListener(this); // =
 
     }
 
@@ -101,6 +107,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 agregarTexto("0");
                 break;
             case R.id.btn26: // +
+                agregarTexto("+");
+                break;
+            case R.id.btn22: // -
+                agregarTexto("-");
+                break;
+            case R.id.btn18: // X (multiplicar)
+                agregarTexto("x");
+                break;
+            case R.id.btn14:
+                agregarTexto("÷");
+                break;
+            case R.id.btn30:
+                resultado();
                 break;
         }
     }
@@ -109,7 +128,125 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String aux = pantalla.getText().toString();
         pantalla.setText(aux + txt);
     }
+    public void resultado(){
+        String aux = pantalla.getText().toString();
+        for(int i = 0; i < aux.length(); i++){
+            switch (aux.charAt(i)){
+                case '+':
+                    sumar();
+                    break;
+                case '-':
+                    restar();
+                    break;
+                case 'x':
+                    multiplicar();
+                    break;
+                case '÷':
+                    dividir();
+                    break;
+            }
+        }
+    }
 
     public void sumar(){
+        String aux = pantalla.getText().toString();
+        int tambaja = 0; // tamaño de la parte baja de la operacion
+        String baja = ""; // donde se guarda la parte baja de la operacion
+        String alta ="";
+
+        //Obtenemos la parte alta
+        for (int i=0; i < aux.length(); i++){
+            if (aux.charAt(i) =='+'){
+                break;
+            }else{
+                baja = baja + aux.charAt(i);
+                tambaja++;
+            }
+        }
+        //Obtenemos la parte baje
+        for (int i = tambaja + 1; i < aux.length();i++)
+            alta = alta + aux.charAt(i);
+
+        float resultado = Float.parseFloat(baja) + Float.parseFloat(alta);
+        aux = Float.toString(resultado);
+        pantalla.setText(aux);
+    }
+
+    public void restar(){
+        String aux = pantalla.getText().toString();
+        int tambaja = 0; // tamaño de la parte baja de la operacion
+        String baja = ""; // donde se guarda la parte baja de la operacion
+        String alta ="";
+
+        //Obtenemos la parte alta
+        for (int i=0; i < aux.length(); i++){
+            if (aux.charAt(i) =='-'){
+                break;
+            }else{
+                baja = baja + aux.charAt(i);
+                tambaja++;
+            }
+        }
+        //Obtenemos la parte baje
+        for (int i = tambaja + 1; i < aux.length();i++)
+            alta = alta + aux.charAt(i);
+
+        float resultado = Float.parseFloat(baja) - Float.parseFloat(alta);
+        aux = Float.toString(resultado);
+        pantalla.setText(aux);
+    }
+
+    public void multiplicar(){
+        String aux = pantalla.getText().toString();
+        int tambaja = 0; // tamaño de la parte baja de la operacion
+        String baja = ""; // donde se guarda la parte baja de la operacion
+        String alta ="";
+
+        //Obtenemos la parte alta
+        for (int i=0; i < aux.length(); i++){
+            if (aux.charAt(i) =='x'){
+                break;
+            }else{
+                baja = baja + aux.charAt(i);
+                tambaja++;
+            }
+        }
+        //Obtenemos la parte baje
+        for (int i = tambaja + 1; i < aux.length();i++)
+            alta = alta + aux.charAt(i);
+
+        float resultado = Float.parseFloat(baja) * Float.parseFloat(alta);
+        aux = Float.toString(resultado);
+        pantalla.setText(aux);
+    }
+
+    public void dividir(){
+        String aux = pantalla.getText().toString();
+        int tambaja = 0; // tamaño de la parte baja de la operacion
+        String baja = ""; // donde se guarda la parte baja de la operacion
+        String alta ="";
+
+        //Obtenemos la parte alta
+        for (int i=0; i < aux.length(); i++){
+            if (aux.charAt(i) =='÷'){
+                break;
+            }else{
+                baja = baja + aux.charAt(i);
+                tambaja++;
+            }
+        }
+        //Obtenemos la parte baje
+        for (int i = tambaja + 1; i < aux.length();i++)
+            alta = alta + aux.charAt(i);
+
+        try{
+            float resultado = Float.parseFloat(baja) / Float.parseFloat(alta);
+            aux = Float.toString(resultado);
+        }catch (Exception e){
+            aux = "No se puede dividir entre 0";
+            pantalla.setText(aux);
+        }finally {
+            pantalla.setText(aux);
+        }
     }
 }
