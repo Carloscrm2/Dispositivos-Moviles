@@ -6,6 +6,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.view.View;
 
@@ -45,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
             pintura.setStrokeWidth(10); //ancho de la linea
             canvas.drawLine(50,0,50, (float)alto, pintura);
             canvas.drawLine(50,100,(float)ancho, 100, pintura);
+            pintura.setStyle(Paint.Style.STROKE); // Quitar el relleno del circulo
+            canvas.drawCircle(ancho/2, alto/2, 300, pintura);
+
+            //Dibujo de un rectangulo
+            RectF rectangulo = new RectF(200, 100, 400, 500);
+            canvas.drawRect(rectangulo, pintura);
+
+            //Dibujar una trayectoria
+            Path trazo = new Path();
+            trazo.addCircle(ancho/2, alto/2, 300, Path.Direction.CCW);//CCW en contra de las manecillas
+            pintura.setColor(Color.DKGRAY);
+            canvas.drawTextOnPath("Instituto Politecnico Nacional", trazo, 400,80, pintura);
 
         }
     }
