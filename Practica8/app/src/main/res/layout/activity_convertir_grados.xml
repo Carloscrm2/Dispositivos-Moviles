@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conversion de Grados"
+        android:layout_gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grados Celcius:"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50sp"/>
+
+    <EditText
+        android:id="@+id/edtx1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="150sp"
+        android:height="30sp"
+        android:layout_marginLeft="150sp"
+        android:layout_marginTop="-30sp"
+        android:background="#9FA9AA"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grados Farenheit:"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50sp"/>
+
+    <EditText
+        android:id="@+id/edtx2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="150sp"
+        android:height="30sp"
+        android:layout_marginLeft="180sp"
+        android:layout_marginTop="-30sp"
+        android:background="#9FA9AA"/>
+
+
+</LinearLayout>
