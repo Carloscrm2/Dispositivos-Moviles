@@ -16,7 +16,7 @@
         <Button
             android:id="@+id/btn1"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="#009688"
+            android:background="#F11111"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
