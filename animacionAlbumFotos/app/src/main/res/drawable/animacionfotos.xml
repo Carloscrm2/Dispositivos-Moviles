@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/android"
+        android:duration="1000"/>
+    <item android:drawable="@drawable/bosquebn"
+        android:duration="1000"/>
+    <item android:drawable="@drawable/daltonico"
+        android:duration="1000"/>
+    <item android:drawable="@drawable/kitty"
+        android:duration="1000"/>
+</animation-list>

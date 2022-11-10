@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F65905">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Album de fotos"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_margin="30dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/boton1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#3664ef"
+            android:gravity="center"
+            android:text="Atras"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/boton2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:backgroundTint="#3664ef"
+            android:gravity="center"
+            android:text="Adelante"
+            android:textColor="#000" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="fitCenter"
+        android:layout_margin="10dp">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_margin="30dp"/>
+
+
+</LinearLayout>
