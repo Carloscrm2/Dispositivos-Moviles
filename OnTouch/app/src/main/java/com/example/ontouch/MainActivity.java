@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     class vistagrafico extends View {
-        float x = 300;
-        float y = 300;
-        float radio = 60;
+        float x[] = {300, 300};
+        float y[] = {300,600};
+        float radio[] = {60,100};
         String txtEvento = "Evento";
         public vistagrafico(Context context){
             super(context);
@@ -32,40 +32,68 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onDraw(Canvas canvas){
             canvas.drawColor(Color.YELLOW);
-            Paint paint = new Paint();
-            paint.setColor(Color.BLUE);
-            canvas.drawCircle(x,y,radio,paint);
-            paint.setColor(Color.BLACK);
-            paint.setTextSize(60);
-            canvas.drawText("Mueve el ciruclo", 100, 80, paint);
-            canvas.drawText("x = " + x + " y = " + y, 100, 150, paint);
-            canvas.drawText(txtEvento, 100, 230, paint);
+            Paint paint[] = new Paint[2];
+            paint[0] = new Paint();
+            paint[1] = new Paint();
+            Paint paint2 = new Paint();
+            paint[0].setColor(Color.BLUE);
+            paint[1].setColor(Color.WHITE);
+                for (int i=0; i<2;i++){
+                    canvas.drawCircle(x[i],y[i],radio[i],paint[i]);
+                }
+
+            paint2.setColor(Color.BLACK);
+            paint2.setTextSize(60);
+            canvas.drawText("Mueve el ciruclo", 100, 80, paint2);
+            canvas.drawText("x = " + x[0] + " y = " + y[0], 100, 150, paint2);
+            canvas.drawText(txtEvento, 100, 230, paint2);
         }
 
         @Override
         public boolean onTouchEvent(MotionEvent Evento){
+            float nx = Evento.getX();
+            float ny = Evento.getY();
+            float distancia = 0;
+            for (int i=0; i<2;i++) {
+                distancia = (float) Math.sqrt((nx - x[i]) * (nx - x[i]) + (ny - y[i]) * (ny - x[i]));
+                if (distancia < radio[i]){
+                    txtEvento = "Circulo seleccionado";
+                    invalidate();
+                }
+            }
             if (Evento.getAction() == MotionEvent.ACTION_DOWN){
-                x = Evento.getX();
+                /*x = Evento.getX();
                 y = Evento.getY();
                 txtEvento = "Action Down";
                 // para que se apliquen los cambios es necesario usar invalidate()
-                invalidate();
+                invalidate();*/
+                /*if (distancia < radio[0]){
+                    txtEvento = "Circulo seleccionado";
+                    invalidate();
+
+                }*/
             }
 
             if (Evento.getAction() == MotionEvent.ACTION_UP){
-                x = Evento.getX();
+                /*x = Evento.getX();
                 y = Evento.getY();
                 txtEvento = "Action Up";
                 // para que se apliquen los cambios es necesario usar invalidate()
-                invalidate();
+                invalidate();*/
             }
 
             if (Evento.getAction() == MotionEvent.ACTION_MOVE){
-                x = Evento.getX();
+                /*x = Evento.getX();
                 y = Evento.getY();
                 txtEvento = "Action Move";
                 // para que se apliquen los cambios es necesario usar invalidate()
-                invalidate();
+                invalidate();*/
+                if (distancia<radio[0]){
+                    txtEvento = "Moviendo circulo";
+                    x[0] = nx;
+                    y[0] = ny;
+                    invalidate();
+                }
             }
 
 

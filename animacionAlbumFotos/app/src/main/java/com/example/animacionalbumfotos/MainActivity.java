@@ -21,12 +21,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         foto.setBackgroundResource(R.drawable.animacionfotos);
         /*foto.setAdjustViewBounds(true);
         foto.setVisibility(View.VISIBLE);*/
-        boton1.setOnClickListener(this);
-        boton2.setOnClickListener(this);
+
 
         animacion = new AnimationDrawable();
-        animacion = (AnimationDrawable) foto.getBackground();
+        int t = 1000;
+        animacion.addFrame(getResources().getDrawable(R.drawable.android), t);
+        animacion.addFrame(getResources().getDrawable(R.drawable.bosquebn), t);
+        animacion.addFrame(getResources().getDrawable(R.drawable.daltonico), t);
+        animacion.addFrame(getResources().getDrawable(R.drawable.kitty), t);
+
+        animacion.setOneShot(false);
         foto.setImageDrawable(animacion);
+        boton1.setOnClickListener(this);
+        boton2.setOnClickListener(this);
     }
     @Override
     public void onClick(View view){

@@ -17,8 +17,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int i = 0; // Para recorrer las fotos
     int longitudAlbum;
     int id_foto[] = {R.drawable.venom, R.drawable.daltonico,
-                     R.drawable.ipn, R.drawable.tele};
-    String nombre_foto[] = {"Venom", "Daltonico", "Ipn", "Telematica"};
+                     R.drawable.ipn, R.drawable.tele, R.drawable.android, R.drawable.bosquebn, R.drawable.gatobn,
+    R.drawable.guitar, R.drawable.kitty, R.drawable.man};
+    String nombre_foto[] = {"Venom", "Daltonico", "Ipn", "Telematica", "android", "bosque","gato",
+            "guitarra", "kitty", "hombre"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +40,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn2.setOnClickListener(this);
     }
 
-
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.boton1){
             i--;
             if(i <= -1)
-                i = 3;
+                i = 9;
             foto.setImageResource(id_foto[i]);
             txt1.setText(nombre_foto[i]);
         }
