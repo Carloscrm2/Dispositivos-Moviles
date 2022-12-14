@@ -14,7 +14,6 @@
         android:textColor="@color/black"
         android:gravity="center"/>
 
-
     <TextView
         android:id="@+id/texto2"
         android:layout_width="match_parent"
@@ -24,5 +23,4 @@
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="40sp"/>
-
 </LinearLayout>

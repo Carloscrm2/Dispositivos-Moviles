@@ -22,7 +22,7 @@ int nuevox, nuevoy;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         Vistafotos album = new Vistafotos(this);
         setContentView(album);
 
@@ -41,6 +41,8 @@ int nuevox, nuevoy;
             foto = this.getResources().getDrawable(id_fotos[i]);
             anchofoto = foto.getIntrinsicWidth();
             altofoto = foto.getIntrinsicHeight();
+            anchoCanvas = getWidth();
+            altoCanvas = getHeight();
 
             relacionCanvas = (float) altoCanvas/anchoCanvas;
             relacionFoto = (float) altofoto/anchofoto;
@@ -63,7 +65,7 @@ int nuevox, nuevoy;
             float X = evento.getX();
             float Y = evento.getY();
 
-            if(evento.getAction()==MotionEvent.ACTION_DOWN){
+            if(evento.getAction()==MotionEvent.ACTION_MOVE){
                 if (X >= nuevox/2 && X <= nuevox && Y <= nuevoy){
                     i++;
                     if (i==total_fotos)

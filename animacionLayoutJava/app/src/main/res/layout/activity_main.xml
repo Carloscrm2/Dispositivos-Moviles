@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#78F461"
+    android:id="@+id/ly1">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ANIMACIONES"
+        android:textSize="24sp"
+        android:textColor="#000"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INSTITUTO POLITECNICO NACIONAL"
+        android:textSize="24sp"
+        android:textColor="#000"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UPIITA"
+        android:textSize="24sp"
+        android:textColor="#000"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:id="@+id/txt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TELEMATICA"
+        android:textSize="24sp"
+        android:textColor="#000"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:id="@+id/txt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PROGRAMACION D DISPOSITIVOS MOVILES"
+        android:textSize="24sp"
+        android:textColor="#000"
+        android:layout_margin="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BOTON 1"
+        android:layout_margin="20dp"/>
+
+</LinearLayout>

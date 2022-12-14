@@ -3,23 +3,27 @@ package com.example.listeneraplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
+import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements Animation.AnimationListener{
+public class MainActivity extends AppCompatActivity implements Animation.AnimationListener, View.OnClickListener{
     TextView tv1;
     Animation escalamiento, transparencia, traslacion;
+    Button boton;
     int i = 10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv1 = (TextView) findViewById(R.id.texto1);
+        boton = (Button) findViewById(R.id.btn);
 
         //Animacion de transparencia (Aparicion)
         transparencia = new AlphaAnimation(0,1);
@@ -29,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
         transparencia.setRepeatCount(10);
         tv1.startAnimation(transparencia);
 
-
+        boton.setOnClickListener(this);
 
         //Animacion de escalamiento
         int rs = ScaleAnimation.RELATIVE_TO_SELF;
@@ -77,6 +81,13 @@ public class MainActivity extends AppCompatActivity implements Animation.Animati
         if (animation == transparencia){
             i--;
             tv1.setText("CONTADOR = " + i);
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.btn){
+            boton.startAnimation(escalamiento);
         }
     }
 }

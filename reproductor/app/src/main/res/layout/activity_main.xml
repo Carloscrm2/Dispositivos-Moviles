@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#D36464">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reproductor de Musica"
+        android:layout_margin="20dp"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/tillThereWasYou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Boton 1"
+        android:layout_margin="20dp"
+        android:backgroundTint="#036464"/>
+
+    <Button
+        android:id="@+id/devilInHereHeart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Boton 2"
+        android:layout_margin="20dp"
+        android:backgroundTint="#036464"/>
+
+    <Button
+        android:id="@+id/pausa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pausa"
+        android:layout_margin="20dp"
+        android:backgroundTint="#036464"/>
+
+    <Button
+        android:id="@+id/parar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="parar"
+        android:layout_margin="20dp"
+        android:backgroundTint="#036464"/>
+
+</LinearLayout>

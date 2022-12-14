@@ -17,13 +17,22 @@
 
     <TextView
         android:id="@+id/texto1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="CONTADOR = 10"
         android:textSize="28sp"
-        android:layout_margin="30dp"
+        android:layout_margin="12dp"
         android:gravity="center"
         android:textStyle="bold"
+        android:layout_gravity="center"
         android:textColor="#000"/>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="120dp"
+        android:text="Boton"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

@@ -27,7 +27,7 @@
             android:layout_weight="1"
             android:backgroundTint="#3664ef"
             android:gravity="center"
-            android:text="Atras"
+            android:text="Detener"
             android:textColor="#000" />
 
         <Button
@@ -38,7 +38,7 @@
             android:layout_weight="1"
             android:backgroundTint="#3664ef"
             android:gravity="center"
-            android:text="Adelante"
+            android:text="Iniciar"
             android:textColor="#000" />
     </LinearLayout>
 
